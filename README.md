@@ -1,2 +1,2 @@
-# Projects-ML
+# Projects-EDA
 All of my newest projects
