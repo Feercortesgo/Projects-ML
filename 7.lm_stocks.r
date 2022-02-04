@@ -14,7 +14,7 @@ D <- read.xlsx('...',1)
 #guarda el resultado de filtrar la columna 'Date' en df
 resultados                     <- data.frame('Date' = D$Date)
 
-#asinga nulos en todas las filas de las columnas con posición 2 a 14 del df "D" 
+#asinga nulos en todas las filas de las columnas con posiciÃ³n 2 a 14 del df "D" 
 resultados[,colnames(D)[2:14]] <- NA
 
 #asinga el valor 52 a ventana
@@ -34,9 +34,9 @@ for (i in c(colnames(resultados)[2:14])){
     #print(j)
     #solo toma las primeras 52 lineas
     D_short           <- D[inicio:j,]
-    #le da tratamiento a nulos asignandolos a cero, aunque se podría hacer otra imputación (la media probablemente)
+    #le da tratamiento a nulos asignandolos a cero, aunque se podrÃ­a hacer otra imputaciÃ³n (la media probablemente)
     D_short[is.na(D_short)] <- 0
-    #realiza la función que aproxima los valores de i mediante ust y vix, extrae coeficientes para ust.
+    #realiza la funciÃ³n que aproxima los valores de i mediante ust y vix, extrae coeficientes para ust.
     resultados[j,i]   <- lm(formula, data = D_short,)$coefficients['UST']
     
   }
